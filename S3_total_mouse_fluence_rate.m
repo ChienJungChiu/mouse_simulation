@@ -35,7 +35,7 @@ right_source_810 = flux_energy.data;
 total_810_energy_density = left_source_810 + up_source_810 + right_source_810;
 sum_810 = sum(total_810_energy_density,'all');
 
-%% three sources from default W/(m^2) to LRS 30 mW/(cm^2) => *1/10*30 = 3 
+%% three sources from default W/(m^2) to LRS 80 mW/(cm^2) => *1/10*80 = 8 
 total_770_energy_density = total_770_energy_density*8;
 mcxplotvol(log10(total_770_energy_density));
 colormap(jet);
@@ -61,7 +61,7 @@ set(gca,'YDir','normal');
 hold on;
 saveas(gcf,'770_cross_section.jpg');
 
-%% three source from default W/(m^2) to LRS 30 mW/(cm^2) => *1/10*30 = 3 
+%% three source from default W/(m^2) to LRS 80 mW/(cm^2) => *1/10*80 = 8
 total_810_energy_density = total_810_energy_density*8;
 mcxplotvol(log10(total_810_energy_density));
 colormap(jet);
