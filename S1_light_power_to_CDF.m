@@ -75,6 +75,7 @@ degree(29,:) = [];
 
 interpolation_cdf_770_3D = interp1(cdf_770_3D,degree,p_sample,'pchip');
 interpolation_cdf_770_3D = interpolation_cdf_770_3D' ;
+interpolation_cdf_770_3D = interpolation_cdf_770_3D./180*pi;
 writematrix(interpolation_cdf_770_3D, 'interpolation_cdf_770_3D.txt');
 p_sample = p_sample';
 sample_degree_770 = [p_sample interpolation_cdf_770_3D];
@@ -90,11 +91,7 @@ cdf_810_3D(30,:) = [];
 
 interpolation_cdf_810_3D = interp1(cdf_810_3D,degree,p_sample,'pchip');
 interpolation_cdf_810_3D = interpolation_cdf_810_3D' ;
+interpolation_cdf_810_3D = interpolation_cdf_810_3D./180*pi;
 writematrix(interpolation_cdf_810_3D, 'interpolation_cdf_810_3D.txt');
 p_sample = p_sample';
 sample_degree_810 = [p_sample interpolation_cdf_810_3D];
-
-figure;
-bar(x,interpolation_cdf_810_3D);
-ylabel('Degree');xlabel('Probability');grid on;
-title('810nm 3D LED CDF interpolation');
