@@ -57,7 +57,7 @@ cfg.srctype='anglepattern';
 cfg.srcpos=[160.0 115.0 50.0]; %right
 
 cfg.srcparam1=[10000 0 0 0];
-cfg.srcpattern = load('interpolation_cdf_770_3D.txt');  %change here for different cdf
+cfg.srcpattern = load('interpolation_cdf_810_3D.txt');  %change here for different cdf
 
 %cfg.srcdir=[0 0 -1];  %up
 %cfg.srcdir=[1 0 0]; %left
@@ -74,11 +74,11 @@ cfg.autopilot=1;
 cfg.gpuid=1;
 cfg.unitinmm=0.4*2;
 cfg.debuglevel='P';
-cfg.outputtype = 'energy';
+cfg.outputtype = 'energy'; %unit: J/mm^3
 
 flux_energy=mcxlab(cfg);
 fcw=flux_energy.data;
-filename = '770_right_mouse_20220926.mat';
+filename = '810_right_mouse_20230317.mat';
 save(filename)
 
 mcxplotvol(log10(fcw));
